@@ -1,5 +1,5 @@
 # dotfiles
-Arch Linux + KDE Plasma + Fish Shell + Tmux 
+Arch Linux + KDE Plasma + Fish Shell + Tmux + Powerline
 
 ### tmux.conf key bindings 
 
