@@ -1,7 +1,7 @@
 # dotfiles
 Arch Linux + KDE Plasma + Fish Shell + Tmux + Powerline
 
-### tmux.conf key bindings 
+## Tmux key bindings 
 
 Prefix Key : ($prefix)		Ctrl + a
 
