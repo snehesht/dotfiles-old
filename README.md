@@ -10,8 +10,8 @@ New Window : 			$prefix + n
 Split Pane (Horizontal) : 	$prefix + h
 Split Pane (Vertical) : 	$prefix + v
 
-Kill Window : 			$prefix + k + w
-Kill Pane : 			$prefix + k + p
+Kill Window : 			Ctrl + k + w
+Kill Pane : 			Ctrl + k + p
 
 Next Window : 			Shift + Right Arrow 
 Prev Window : 			Shift + Left Arrow 
