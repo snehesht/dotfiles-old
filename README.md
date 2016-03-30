@@ -1,6 +1,22 @@
 # dotfiles
 Arch Linux + KDE Plasma + Fish Shell + Tmux + Powerline
 
+Clone this repo into the home directory
+'''
+cd ~
+git clone https://github.com/snehesht/dotfiles
+'''
+
+## Fish Shell Setup
+Install fish-shell using yaourt and then go to [oh-my-fish][https://github.com/oh-my-fish/oh-my-fish] and install it too.
+Remove the directory ~/.config/fish and create a symlink 
+
+'''
+rm -rf ~/.config/fish 
+ln -s ~/dotfiles/fish ~/.config/fish
+'''
+
+
 ## Tmux key bindings 
 
 Prefix Key : ($prefix)		Ctrl + a
