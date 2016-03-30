@@ -17,7 +17,7 @@ set -gx GOPATH $GOPATH ~/WorkSpace/Go
 # Shortcuts
 # Editor Shortcut
 function edit
-	nvim $args
+	nvim $argv
 end
 
 # Git Commands - Shortcuts
