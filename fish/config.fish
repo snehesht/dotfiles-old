@@ -11,6 +11,15 @@ source $OMF_PATH/init.fish
 set -gx PATH $PATH ~/WorkSpace/Go/bin
 set -gx GOPATH $GOPATH ~/WorkSpace/Go
 
+
+
+
+# Shortcuts
+# Editor Shortcut
+function edit
+	nvim $args
+end
+
 # Git Commands - Shortcuts
 # Git Add
 function ga
