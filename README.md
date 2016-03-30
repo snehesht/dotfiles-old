@@ -19,6 +19,9 @@ ln -s ~/dotfiles/fish ~/.config/fish
 
 
 ```
+[Edit files - Using NeoVim]
+$ edit FILE_NAME
+
 [Git Support]
 $ gh
 
