@@ -1,39 +1,54 @@
 # dotfiles
-Arch Linux + KDE Plasma + Fish Shell + Tmux + Powerline
+Archlinux, KDE, Xfce-Terminal, Tmux, Powerline
 
 Clone this repo into the home directory
-'''
+```
 cd ~
 git clone https://github.com/snehesht/dotfiles
-'''
+```
 
 ## Fish Shell Setup
-Install fish-shell using yaourt and then go to [oh-my-fish][https://github.com/oh-my-fish/oh-my-fish] and install it too.
-Remove the directory ~/.config/fish and create a symlink 
+Install fish-shell using yaourt and then go to [oh-my-fish](https://github.com/oh-my-fish/oh-my-fish) and install it too.
+Remove the directory ~/.config/fish and create a symlink
 
-'''
-rm -rf ~/.config/fish 
+```
+rm -rf ~/.config/fish
 ln -s ~/dotfiles/fish ~/.config/fish
-'''
+```
+### Fish Shortcuts
 
 
-## Tmux key bindings 
+```
+[Git Support]
+$ gh
 
-Prefix Key : ($prefix)		Ctrl + a
+[Temperature]
+$ sensor
+```
 
-New Window : 			$prefix + n
 
-Split Pane (Horizontal) : 	$prefix + h
-Split Pane (Vertical) : 	$prefix + v
+## Tmux key bindings
 
-Kill Window : 			Ctrl + k + w
-Kill Pane : 			Ctrl + k + p
+Prefix Key ($prefix)	: `	Ctrl + a `
 
-Next Window : 			Shift + Right Arrow 
-Prev Window : 			Shift + Left Arrow 
+New Window : 		           	`$prefix + n`
 
-Switch Pane Up : 		Ctrl + Up Arrow 
-Switch Pane Down : 		Ctrl + Down Arrow
-Switch Pane Right : 		Ctrl + Right Arrow 
-Switch Pane Left : 		Ctrl + Left Arrow
+Split Pane (Horizontal) : `	$prefix + h`
 
+Split Pane (Vertical) :   	`$prefix + v`
+
+Kill Window : 		        	`Ctrl + k + w`
+
+Kill Pane : 			         ` Ctrl + k + p`
+
+Next Window : 		        	`Shift + Right Arrow`
+
+Prev Window : 		        	`Shift + Left Arrow`
+
+Switch Pane Up : 		`Ctrl + Up Arrow`
+
+Switch Pane Down : 		`Ctrl + Down Arrow`
+
+Switch Pane Right : 		`Ctrl + Right Arrow`
+
+Switch Pane Left : 		`Ctrl + Left Arrow`
