@@ -8,11 +8,12 @@ set -gx OMF_PATH "/home/warlock/.local/share/omf"
 source $OMF_PATH/init.fish
 
 # Goland Path
-set -gx PATH $PATH ~/WorkSpace/Go/bin
-set -gx GOPATH $GOPATH ~/WorkSpace/Go
+set -gx PATH $PATH ~/CodeBase/Go/bin
+set -gx GOPATH $GOPATH ~/CodeBase/Go
 
-
-
+# Ruby Path
+#set -gx PATH $PATH $(ruby -rubygems -e "puts Gem.user_dir")/bin
+set -gx PATH $PATH ~/.gem/ruby/2.3.0/bin
 
 # Shortcuts
 # Editor Shortcut
