@@ -7,6 +7,9 @@ cd ~
 git clone https://github.com/snehesht/dotfiles
 ```
 
+## Sublime text 3 Setup
+``` ln -s sublime-text/* ~/.config/submile-text-3/ ```
+
 ## Fish Shell Setup
 Install fish-shell using yaourt and then go to [oh-my-fish](https://github.com/oh-my-fish/oh-my-fish) and install it too.
 Remove the directory ~/.config/fish and create a symlink
