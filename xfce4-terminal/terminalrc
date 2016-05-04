@@ -1,0 +1,25 @@
+[Configuration]
+ColorCursor=#ffffffffffff
+ColorForeground=#ffffffffffff
+ColorBackground=#101010101010
+ColorPalette=#1d1d1f1f2121;#f7f700000000;#0000ffff2626;#ffff65650000;#39397171eded;#ffff0000c6c6;#39397171eded;#c5c5c8c8c6c6;#969698989696;#f7f700000000;#0000ffff2626;#ffff65650000;#39397171eded;#ffff0000c6c6;#39397171eded;#ffffffffffff
+FontName=Hack 10
+MiscAlwaysShowTabs=FALSE
+MiscBell=FALSE
+MiscBordersDefault=TRUE
+MiscCursorBlinks=TRUE
+MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
+MiscDefaultGeometry=80x24
+MiscInheritGeometry=FALSE
+MiscMenubarDefault=TRUE
+MiscMouseAutohide=FALSE
+MiscToolbarDefault=FALSE
+MiscConfirmClose=TRUE
+MiscCycleTabs=TRUE
+MiscTabCloseButtons=TRUE
+MiscTabCloseMiddleClick=TRUE
+MiscTabPosition=GTK_POS_TOP
+MiscHighlightUrls=TRUE
+ScrollingBar=TERMINAL_SCROLLBAR_NONE
+FontAllowBold=FALSE
+
