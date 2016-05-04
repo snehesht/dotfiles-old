@@ -6,6 +6,7 @@
 	"installed_packages":
 	[
 		"Jedi - Python autocompletion",
+		"Markdown Preview",
 		"Package Control",
 		"PackageResourceViewer",
 		"Solarized Color Scheme",
