@@ -26,8 +26,8 @@ def weather():
 
 if __name__=="__main__":
 	# Usage
-	print("Usage ...")
-	print("tools.py {ip4 | ip6 | temp}")
+	#print("Usage ...")
+	#print("tools.py {ip4 | ip6 | temp}")
 
 	# This map holds a map from args to function
 	fun_map = {
