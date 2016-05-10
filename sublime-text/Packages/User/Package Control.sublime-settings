@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"Emmet",
 		"Jedi - Python autocompletion",
 		"Markdown Preview",
 		"Package Control",
