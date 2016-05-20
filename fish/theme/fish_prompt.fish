@@ -67,7 +67,7 @@ function fish_prompt
     end
   end
 
-  set -l curr_time $green(date  '+%I:%M')
+  set -l curr_time $green(date  '+%I:%M %p')
   set -l final_prompt "➤"
   echo -n -s '[' $curr_time $normal ']' ' ' '[' $cwd $normal $git_info $normal ']' $arrow ' $' ' '
 end
