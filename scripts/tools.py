@@ -2,7 +2,7 @@
 import requests
 import sys
 import json
-from lxml import html
+
 
 def ipv4():
 	res = requests.get('http://v4.ipv6-test.com/api/myip.php')
