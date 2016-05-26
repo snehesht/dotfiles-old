@@ -1,28 +1,32 @@
 #!/usr/bin/python
-import requests
+import sys
+if sys.version[0] == "2":
+    from urllib import urlopen
+else:
+    from urllib.request import urlopen
 import sys
 import json
-from lxml import html
+
 
 def ipv4():
-	res = requests.get('http://v4.ipv6-test.com/api/myip.php')
-	ip = res.text
-	print(ip)
+	res = urlopen('http://v4.ipv6-test.com/api/myip.php')
+	ip = res.read()
+	print(ip.decode())
 
 def ipv6():
-	res = requests.get("http://v6.ipv6-test.com/api/myip.php")
-	ip = res.text
-	print(ip)
+	res = urlopen("http://v6.ipv6-test.com/api/myip.php")
+	ip = res.read()
+	print(ip.decode())
 
 def india_time():
 	pass
 
 def weather():
 	# Weather in Cincinnati OH
-	req = requests.get('''https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast%20where%20woeid%20%3D%202380358&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys''')
-	res = json.loads(req.text)
-	temp = (int(res['query']['results']['channel']['item']['condition']['temp']) - 32)*(5/9)
-	print(str(int(temp))+"°C",",",res['query']['results']['channel']['item']['condition']['text'])
+	req = urlopen('''https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast%20where%20woeid%20%3D%202380358&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys''')
+	res = json.loads(req.read().decode())
+	temp = (int(res['query']['results']['channel']['item']['condition']['temp']) - 32)*(0.55555555555)
+	print(str(int(temp))+" C",",",res['query']['results']['channel']['item']['condition']['text'])
 
 if __name__=="__main__":
 	# Usage

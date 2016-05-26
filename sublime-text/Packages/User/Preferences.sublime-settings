@@ -3,7 +3,7 @@
 	"bold_folder_labels": true,
 	"caret_extra_bottom": 2,
 	"caret_extra_top": 2,
-	"caret_extra_width": 5,
+	"caret_extra_width": 8,
 	"color_scheme": "Packages/LightSolarized.tmTheme",
 	"draw_white_space": "all",
 	"font_face": "Hack",
