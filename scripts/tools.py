@@ -23,7 +23,7 @@ def india_time():
 
 def weather():
 	# Weather in Cincinnati OH
-	req = urlopen('''https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast%20where%20woeid%20%3D%202380358&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys''')
+	req = urlopen('''https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast%20where%20woeid%20%3D%202459115&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys''')
 	res = json.loads(req.read().decode())
 	temp = (int(res['query']['results']['channel']['item']['condition']['temp']) - 32)*(0.55555555555)
 	print(str(int(temp))+" C",",",res['query']['results']['channel']['item']['condition']['text'])
