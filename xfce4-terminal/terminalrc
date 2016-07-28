@@ -1,17 +1,12 @@
 [Configuration]
-ColorCursor=#ffffffffffff
-ColorForeground=#ffffffffffff
-ColorBackground=#101010101010
-ColorPalette=#1d1d1f1f2121;#f7f700000000;#0000ffff2626;#ffff65650000;#39397171eded;#ffff0000c6c6;#39397171eded;#c5c5c8c8c6c6;#969698989696;#f7f700000000;#0000ffff2626;#ffff65650000;#39397171eded;#ffff0000c6c6;#39397171eded;#ffffffffffff
-FontName=Hack 10
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
 MiscBordersDefault=TRUE
-MiscCursorBlinks=TRUE
+MiscCursorBlinks=FALSE
 MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
-MiscDefaultGeometry=80x24
+MiscDefaultGeometry=80x30
 MiscInheritGeometry=FALSE
-MiscMenubarDefault=TRUE
+MiscMenubarDefault=FALSE
 MiscMouseAutohide=FALSE
 MiscToolbarDefault=FALSE
 MiscConfirmClose=TRUE
@@ -20,6 +15,13 @@ MiscTabCloseButtons=TRUE
 MiscTabCloseMiddleClick=TRUE
 MiscTabPosition=GTK_POS_TOP
 MiscHighlightUrls=TRUE
+FontName=Meslo LG S for Powerline 12
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
-FontAllowBold=FALSE
+ScrollingLines=4000
+TitleInitial=
+TitleMode=TERMINAL_TITLE_REPLACE
+ColorForeground=#ffffffffffff
+ColorBackground=#222222222222
+ColorCursor=#0e26c6db0000
+ColorPalette=#090903030000;#dbdb2d2d2020;#4a4aeded3434;#fdfdeded0202;#52526f6fffff;#ffffbcbc4646;#4141a8a8ffff;#f0f0f0f0f0f0;#5c5c58585555;#dbdb2d2d2020;#4a4aeded3434;#fdfdeded0202;#52526f6fffff;#ffffbcbc4646;#4141a8a8ffff;#f0f0f0f0f0f0
 

@@ -7,12 +7,16 @@
 	[
 		"Autoprefixer",
 		"Color Highlighter",
+		"Dark Fusion Color Scheme",
 		"DarkMosquito Color Scheme",
+		"Dayle Rees Color Schemes",
 		"DictionaryAutoComplete",
 		"Emmet",
 		"Frontend Light Color Scheme",
 		"GitGutter",
+		"Github Color Theme",
 		"Gitignore",
+		"Inspired GitHub Color Scheme",
 		"Jedi - Python autocompletion",
 		"Jinja2",
 		"LoremGibson",
@@ -25,8 +29,10 @@
 		"Solarized Toggle",
 		"SublimeLinter-contrib-sass-lint",
 		"Sunnyvale Color Scheme",
+		"Theme - Darkmatter",
 		"Theme - Lanzhou",
 		"Theme - Spacegray",
+		"Tomorrow Color Schemes",
 		"VimL"
 	]
 }
