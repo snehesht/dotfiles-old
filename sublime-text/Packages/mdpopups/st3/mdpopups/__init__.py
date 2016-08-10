@@ -318,9 +318,9 @@ def _create_html(
             _debug('\n' + content, INFO)
 
     if wrapper_class:
-        wrapper = ('<body class="mdpopups"><div class="%s">' % wrapper_class) + '%s</div></body>'
+        wrapper = ('<div class="mdpopups"><div class="%s">' % wrapper_class) + '%s</div></div>'
     else:
-        wrapper = '<body class="mdpopups">%s</body>'
+        wrapper = '<div class="mdpopups">%s</div>'
 
     html = "<style>%s</style>" % (style)
     html += _remove_entities(wrapper % content)
@@ -330,7 +330,9 @@ def _create_html(
 def _markup_template(markup, variables, options):
     """Template for markup."""
 
-    if options:
+    if variables:
+        if options is None:
+            options = {}
         env = jinja2.Environment(**options)
         return env.from_string(markup).render(plugin=variables)
     return markup
@@ -360,6 +362,7 @@ def md2html(view, markup, template_vars=None, template_env_options=None, nl2br=T
         "mdpopups.mdx.betterem",
         "mdpopups.mdx.magiclink",
         "mdpopups.mdx.inlinehilite",
+        "mdpopups.mdx.extrarawhtml",
         "markdown.extensions.admonition",
         "markdown.extensions.def_list"
     ]
@@ -516,7 +519,7 @@ def update_popup(
 
     try:
         html = _create_html(
-            view, content, md, css, css_type=POPUP, wrapper_class=None,
+            view, content, md, css, css_type=POPUP, wrapper_class=wrapper_class,
             template_vars=template_vars, template_env_options=template_env_options, nl2br=nl2br
         )
     except Exception:

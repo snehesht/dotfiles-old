@@ -17,6 +17,7 @@
 	"gutter": true,
 	"ignored_packages":
 	[
+		"Jedi - Python Autocompletion",
 		"Vintage"
 	],
 	"indent_guide_options":
@@ -24,8 +25,8 @@
 		"draw_normal",
 		"draw_active"
 	],
-	"line_padding_bottom": 3,
-	"line_padding_top": 3,
+	"line_padding_bottom": 4,
+	"line_padding_top": 4,
 	"material_theme_accent_blue": true,
 	"material_theme_bold_tab": true,
 	"material_theme_compact_panel": true,
@@ -39,6 +40,7 @@
 		80
 	],
 	"show_encoding": true,
+	"spell_check": false,
 	"theme": "Lanzhou.sublime-theme",
 	"trim_trailing_white_space_on_save": true,
 	"word_wrap": true,
