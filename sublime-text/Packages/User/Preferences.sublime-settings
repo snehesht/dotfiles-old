@@ -4,6 +4,7 @@
 	"caret_extra_bottom": 2,
 	"caret_extra_top": 2,
 	"caret_extra_width": 2,
+	"close_windows_when_empty": false,
 	"color_scheme": "Packages/LightSolarized.tmTheme",
 	"draw_white_space": "all",
 	"font_face": "Fira Mono",

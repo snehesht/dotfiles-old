@@ -61,3 +61,5 @@ Switch Pane Down : 		`Ctrl + Down Arrow`
 Switch Pane Right : 		`Ctrl + Right Arrow`
 
 Switch Pane Left : 		`Ctrl + Left Arrow`
+
+
