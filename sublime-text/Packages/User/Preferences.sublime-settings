@@ -7,7 +7,7 @@
 	"close_windows_when_empty": false,
 	"color_scheme": "Packages/LightSolarized.tmTheme",
 	"draw_white_space": "all",
-	"font_face": "Fira Mono",
+	"font_face": "Fira Code Retina",
 	"font_options":
 	[
 		"gray_antialias",
