@@ -30,6 +30,9 @@ alias gd="git diff $@"
 # Editor
 export EDITOR="vim"
 
+# Calc
+alias calc="bc $@"
+
 
 ############## Custom Paths ###########
 
