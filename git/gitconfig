@@ -12,6 +12,8 @@
   old = red
   new = green
 [alias]
+ # undo
+ undo = "!f() { \\\n    git reset --hard $(git rev-parse --abbrev-ref     HEAD)@{${1-1}}; \\\n}; f"
   # add
   a = add                           # add
   chunkyadd = add --patch           # stage commits chunk by chunk
