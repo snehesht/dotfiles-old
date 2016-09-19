@@ -1,5 +1,5 @@
 # smt.zsh-theme, based on dogenpunk by Matthew Nelson.
-# ➤
+# ➤ λ
 
 MODE_INDICATOR="%{$fg_bold[red]%}❮%{$reset_color%}%{$fg[red]%}❮❮%{$reset_color%}"
 local return_status="%{$fg[red]%}%(?..⏎)%{$reset_color%} "
@@ -7,9 +7,9 @@ local return_status="%{$fg[red]%}%(?..⏎)%{$reset_color%} "
 ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg_bold[yellow]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX=""
 # ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg_bold[red]%} x⚡%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$reset_color%} %{$fg_bold[red]%}(✗)%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_AHEAD="%{$reset_color%} %{$fg_bold[red]%}(!)%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$reset_color%} %{$fg_bold[green]%}(✓)%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$reset_color%}%{$fg_bold[red]%} ✗ %{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_AHEAD="%{$reset_color%}%{$fg_bold[red]%} ! %{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$reset_color%}%{$fg_bold[green]%} ✓ %{$reset_color%}"
 
 ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[green]%} ✚"
 #ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[blue]%} ✹"
@@ -21,7 +21,7 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} ✭"
 
 # Format for git_prompt_long_sha() and git_prompt_short_sha()
 ZSH_THEME_GIT_PROMPT_SHA_BEFORE="➜ %{$fg_bold[yellow]%}"
-ZSH_THEME_GIT_PROMPT_SHA_AFTER=" -"
+ZSH_THEME_GIT_PROMPT_SHA_AFTER=" /"
 
 function prompt_char() {
   git branch >/dev/null 2>/dev/null && echo "%{$fg[green]%}±%{$reset_color%}" && return
@@ -94,8 +94,8 @@ function git_time_since_commit() {
 # %{$fg[blue]%}%m%{$reset_color%} 福 %{$fg[cyan]%}%~ %{$reset_color%}$(git_prompt_short_sha)$(git_prompt_info)
 # %{$fg[red]%}%!%{$reset_color%} $(prompt_char) : '
 
-PROMPT='%{$fg[cyan]%}%n%{$reset_color%} λ %{$fg[green]%}%~%{$reset_color%} $(git_prompt_short_sha)$(git_prompt_info)%}${return_status}%{$reset_color%}
-%(?.%{$fg[blue]%}.%{$fg[red]%})%B$%B$%b  '
+PROMPT='%{$fg[cyan]%}%n%{$reset_color%} ➤ %{$fg[green]%}%~%{$reset_color%} $(git_prompt_short_sha)$(git_prompt_info)$(git_prompt_status)%}${return_status}%{$reset_color%}
+%(?.%{$fg[blue]%}.%{$fg[red]%})%B📡%b  '
 
 #RPROMPT='${return_status}$(git_time_since_commit)$(git_prompt_status) %{$reset_color%}[%*] '
 
