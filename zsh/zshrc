@@ -1,12 +1,12 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/warlock/.oh-my-zsh
+export ZSH=/home/warlock/.oh-my-zsh
 
 
 # Ruby Path
 # Golang
-export GOPATH=/home/warlock/CodeBase/Go/
+#export GOPATH=/home/warlock/CodeBase/Go/
 #export GOPATH=$GOROOT/bin
-export PATH="$PATH:$GOPATH/bin"
+#export PATH="$PATH:$GOPATH/bin"
 
 
 # Set name of the theme to load.
@@ -64,7 +64,7 @@ plugins=(git pyenv python)
   export PATH="/usr/local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 # export MANPATH="/usr/local/man:$MANPATH"
 
-export PATH='/home/warlock/.gem/ruby/2.3.0/bin':$PATH
+#export PATH='/home/warlock/.gem/ruby/2.3.0/bin':$PATH
 
 source $ZSH/oh-my-zsh.sh
 
