@@ -28,7 +28,9 @@ alias gd="git diff $@"
 ############## Custom #################
 
 # Editor
-export EDITOR="vim"
+export EDITOR="nvim"
+
+alias vim="nvim $@"
 
 # open links
 alias open="electron ~/min/ $@"
