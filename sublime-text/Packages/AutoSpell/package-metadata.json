@@ -1,1 +1,0 @@
-{"dependencies": [], "version": "0.1.5", "platforms": ["*"], "description": "Sublime Text 3 packge to auto replace spelling mistakes.", "url": "https://github.com/wburningham/AutoSpell", "sublime_text": ">=3000"}
