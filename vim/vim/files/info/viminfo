@@ -18,9 +18,9 @@ $
 
 # Command Line History (newest to oldest):
 :wq
-|2,0,1476891797,,"wq"
+|2,0,1476891894,,"wq"
 :q
-|2,0,1476891746,,"q"
+|2,0,1476891828,,"q"
 :o ~/tmp/test.py
 |2,0,1476891049,,"o ~/tmp/test.py"
 :colo gruvbox
@@ -268,36 +268,74 @@ $
 |3,0,36,0,1,0,1476828911,"    pass"
 
 # File marks:
-'0  43  16  ~/dotfiles/.gitignore
-|4,48,43,16,1476891797,"~/dotfiles/.gitignore"
-'1  36  25  ~/WorkSpace/CertMon/scratchpad/tasks.py
-|4,49,36,25,1476891746,"~/WorkSpace/CertMon/scratchpad/tasks.py"
-'2  1  0  ~/tmp/test.py
-|4,50,1,0,1476891052,"~/tmp/test.py"
-'3  4  0  ~/NERD_tree_1
-|4,51,4,0,1476829396,"~/NERD_tree_1"
-'4  45  0  ~/NERD_tree_1
-|4,52,45,0,1476829374,"~/NERD_tree_1"
-'5  46  0  ~/NERD_tree_1
-|4,53,46,0,1476829374,"~/NERD_tree_1"
-'6  38  0  ~/.vimrc
-|4,54,38,0,1476829288,"~/.vimrc"
-'7  38  0  ~/.vimrc
-|4,55,38,0,1476829288,"~/.vimrc"
-'8  17  6  /tmp/tasks.py
-|4,56,17,6,1476829134,"/tmp/tasks.py"
-'9  44  0  /tmp/tasks.py
-|4,57,44,0,1476829052,"/tmp/tasks.py"
+'0  44  14  ~/dotfiles/.gitignore
+|4,48,44,14,1476891894,"~/dotfiles/.gitignore"
+'1  1  0  ~/dotfiles/.git/MERGE_MSG
+|4,49,1,0,1476891828,"~/dotfiles/.git/MERGE_MSG"
+'2  43  16  ~/dotfiles/.gitignore
+|4,50,43,16,1476891797,"~/dotfiles/.gitignore"
+'3  43  16  ~/dotfiles/.gitignore
+|4,51,43,16,1476891797,"~/dotfiles/.gitignore"
+'4  36  25  ~/WorkSpace/CertMon/scratchpad/tasks.py
+|4,52,36,25,1476891746,"~/WorkSpace/CertMon/scratchpad/tasks.py"
+'5  1  0  ~/tmp/test.py
+|4,53,1,0,1476891052,"~/tmp/test.py"
+'6  4  0  ~/NERD_tree_1
+|4,54,4,0,1476829396,"~/NERD_tree_1"
+'7  45  0  ~/NERD_tree_1
+|4,55,45,0,1476829374,"~/NERD_tree_1"
+'8  46  0  ~/NERD_tree_1
+|4,56,46,0,1476829374,"~/NERD_tree_1"
+'9  38  0  ~/.vimrc
+|4,57,38,0,1476829288,"~/.vimrc"
 
 # Jumplist (newest first):
+-'  44  14  ~/dotfiles/.gitignore
+|4,39,44,14,1476891894,"~/dotfiles/.gitignore"
+-'  1  0  ~/dotfiles/.gitignore
+|4,39,1,0,1476891871,"~/dotfiles/.gitignore"
+-'  1  0  ~/dotfiles/.git/MERGE_MSG
+|4,39,1,0,1476891828,"~/dotfiles/.git/MERGE_MSG"
+-'  1  0  ~/dotfiles/.git/MERGE_MSG
+|4,39,1,0,1476891828,"~/dotfiles/.git/MERGE_MSG"
 -'  43  16  ~/dotfiles/.gitignore
 |4,39,43,16,1476891797,"~/dotfiles/.gitignore"
+-'  43  16  ~/dotfiles/.gitignore
+|4,39,43,16,1476891797,"~/dotfiles/.gitignore"
+-'  43  16  ~/dotfiles/.gitignore
+|4,39,43,16,1476891797,"~/dotfiles/.gitignore"
+-'  1  0  ~/dotfiles/.gitignore
+|4,39,1,0,1476891774,"~/dotfiles/.gitignore"
 -'  1  0  ~/dotfiles/.gitignore
 |4,39,1,0,1476891774,"~/dotfiles/.gitignore"
 -'  36  25  ~/WorkSpace/CertMon/scratchpad/tasks.py
 |4,39,36,25,1476891746,"~/WorkSpace/CertMon/scratchpad/tasks.py"
 -'  36  25  ~/WorkSpace/CertMon/scratchpad/tasks.py
 |4,39,36,25,1476891746,"~/WorkSpace/CertMon/scratchpad/tasks.py"
+-'  36  25  ~/WorkSpace/CertMon/scratchpad/tasks.py
+|4,39,36,25,1476891746,"~/WorkSpace/CertMon/scratchpad/tasks.py"
+-'  36  25  ~/WorkSpace/CertMon/scratchpad/tasks.py
+|4,39,36,25,1476891746,"~/WorkSpace/CertMon/scratchpad/tasks.py"
+-'  36  25  ~/WorkSpace/CertMon/scratchpad/tasks.py
+|4,39,36,25,1476891746,"~/WorkSpace/CertMon/scratchpad/tasks.py"
+-'  36  25  ~/WorkSpace/CertMon/scratchpad/tasks.py
+|4,39,36,25,1476891746,"~/WorkSpace/CertMon/scratchpad/tasks.py"
+-'  36  25  ~/WorkSpace/CertMon/scratchpad/tasks.py
+|4,39,36,25,1476891746,"~/WorkSpace/CertMon/scratchpad/tasks.py"
+-'  36  25  ~/WorkSpace/CertMon/scratchpad/tasks.py
+|4,39,36,25,1476891746,"~/WorkSpace/CertMon/scratchpad/tasks.py"
+-'  1  0  ~/WorkSpace/CertMon/scratchpad/tasks.py
+|4,39,1,0,1476891084,"~/WorkSpace/CertMon/scratchpad/tasks.py"
+-'  1  0  ~/WorkSpace/CertMon/scratchpad/tasks.py
+|4,39,1,0,1476891084,"~/WorkSpace/CertMon/scratchpad/tasks.py"
+-'  1  0  ~/WorkSpace/CertMon/scratchpad/tasks.py
+|4,39,1,0,1476891084,"~/WorkSpace/CertMon/scratchpad/tasks.py"
+-'  1  0  ~/WorkSpace/CertMon/scratchpad/tasks.py
+|4,39,1,0,1476891084,"~/WorkSpace/CertMon/scratchpad/tasks.py"
+-'  1  0  ~/WorkSpace/CertMon/scratchpad/tasks.py
+|4,39,1,0,1476891084,"~/WorkSpace/CertMon/scratchpad/tasks.py"
+-'  1  0  ~/WorkSpace/CertMon/scratchpad/tasks.py
+|4,39,1,0,1476891084,"~/WorkSpace/CertMon/scratchpad/tasks.py"
 -'  1  0  ~/WorkSpace/CertMon/scratchpad/tasks.py
 |4,39,1,0,1476891084,"~/WorkSpace/CertMon/scratchpad/tasks.py"
 -'  1  0  ~/WorkSpace/CertMon/scratchpad/tasks.py
@@ -314,6 +352,114 @@ $
 |4,39,1,0,1476891052,"~/tmp/test.py"
 -'  1  0  ~/tmp/test.py
 |4,39,1,0,1476891052,"~/tmp/test.py"
+-'  1  0  ~/tmp/test.py
+|4,39,1,0,1476891052,"~/tmp/test.py"
+-'  1  0  ~/tmp/test.py
+|4,39,1,0,1476891052,"~/tmp/test.py"
+-'  1  0  ~/tmp/test.py
+|4,39,1,0,1476891052,"~/tmp/test.py"
+-'  1  0  ~/tmp/test.py
+|4,39,1,0,1476891052,"~/tmp/test.py"
+-'  1  0  ~/tmp/test.py
+|4,39,1,0,1476891052,"~/tmp/test.py"
+-'  1  0  ~/tmp/test.py
+|4,39,1,0,1476891052,"~/tmp/test.py"
+-'  1  0  ~/tmp/test.py
+|4,39,1,0,1476891052,"~/tmp/test.py"
+-'  1  0  ~/tmp/test.py
+|4,39,1,0,1476891052,"~/tmp/test.py"
+-'  1  0  ~/tmp/test.py
+|4,39,1,0,1476891052,"~/tmp/test.py"
+-'  1  0  ~/tmp/test.py
+|4,39,1,0,1476891052,"~/tmp/test.py"
+-'  1  0  ~/tmp/test.py
+|4,39,1,0,1476891052,"~/tmp/test.py"
+-'  1  0  ~/tmp/test.py
+|4,39,1,0,1476891052,"~/tmp/test.py"
+-'  1  0  ~/tmp/test.py
+|4,39,1,0,1476891052,"~/tmp/test.py"
+-'  1  0  ~/tmp/test.py
+|4,39,1,0,1476891052,"~/tmp/test.py"
+-'  1  0  ~/tmp/test.py
+|4,39,1,0,1476891052,"~/tmp/test.py"
+-'  1  0  ~/tmp/test.py
+|4,39,1,0,1476891052,"~/tmp/test.py"
+-'  1  0  ~/tmp/test.py
+|4,39,1,0,1476891052,"~/tmp/test.py"
+-'  1  0  ~/tmp/test.py
+|4,39,1,0,1476891052,"~/tmp/test.py"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
+-'  4  0  ~/NERD_tree_1
+|4,39,4,0,1476829396,"~/NERD_tree_1"
 -'  4  0  ~/NERD_tree_1
 |4,39,4,0,1476829396,"~/NERD_tree_1"
 -'  4  0  ~/NERD_tree_1
@@ -344,161 +490,20 @@ $
 |4,39,1,0,1476829383,"~/NERD_tree_1"
 -'  73  2  ~/NERD_tree_1
 |4,39,73,2,1476829383,"~/NERD_tree_1"
--'  1  0  ~/NERD_tree_1
-|4,39,1,0,1476829383,"~/NERD_tree_1"
--'  73  2  ~/NERD_tree_1
-|4,39,73,2,1476829383,"~/NERD_tree_1"
--'  1  0  ~/NERD_tree_1
-|4,39,1,0,1476829383,"~/NERD_tree_1"
--'  73  2  ~/NERD_tree_1
-|4,39,73,2,1476829383,"~/NERD_tree_1"
--'  1  0  ~/NERD_tree_1
-|4,39,1,0,1476829383,"~/NERD_tree_1"
--'  73  2  ~/NERD_tree_1
-|4,39,73,2,1476829383,"~/NERD_tree_1"
--'  1  0  ~/NERD_tree_1
-|4,39,1,0,1476829383,"~/NERD_tree_1"
--'  73  2  ~/NERD_tree_1
-|4,39,73,2,1476829383,"~/NERD_tree_1"
--'  1  0  ~/NERD_tree_1
-|4,39,1,0,1476829383,"~/NERD_tree_1"
--'  73  2  ~/NERD_tree_1
-|4,39,73,2,1476829383,"~/NERD_tree_1"
--'  1  0  ~/NERD_tree_1
-|4,39,1,0,1476829383,"~/NERD_tree_1"
--'  73  2  ~/NERD_tree_1
-|4,39,73,2,1476829383,"~/NERD_tree_1"
--'  1  0  ~/NERD_tree_1
-|4,39,1,0,1476829383,"~/NERD_tree_1"
--'  73  2  ~/NERD_tree_1
-|4,39,73,2,1476829383,"~/NERD_tree_1"
--'  1  0  ~/NERD_tree_1
-|4,39,1,0,1476829383,"~/NERD_tree_1"
--'  73  2  ~/NERD_tree_1
-|4,39,73,2,1476829383,"~/NERD_tree_1"
--'  1  0  ~/NERD_tree_1
-|4,39,1,0,1476829383,"~/NERD_tree_1"
--'  73  2  ~/NERD_tree_1
-|4,39,73,2,1476829383,"~/NERD_tree_1"
--'  1  0  ~/NERD_tree_1
-|4,39,1,0,1476829383,"~/NERD_tree_1"
--'  73  2  ~/NERD_tree_1
-|4,39,73,2,1476829383,"~/NERD_tree_1"
--'  1  0  ~/NERD_tree_1
-|4,39,1,0,1476829383,"~/NERD_tree_1"
--'  45  0  ~/NERD_tree_1
-|4,39,45,0,1476829374,"~/NERD_tree_1"
--'  46  0  ~/NERD_tree_1
-|4,39,46,0,1476829374,"~/NERD_tree_1"
--'  45  0  ~/NERD_tree_1
-|4,39,45,0,1476829374,"~/NERD_tree_1"
--'  46  0  ~/NERD_tree_1
-|4,39,46,0,1476829374,"~/NERD_tree_1"
--'  45  0  ~/NERD_tree_1
-|4,39,45,0,1476829374,"~/NERD_tree_1"
--'  46  0  ~/NERD_tree_1
-|4,39,46,0,1476829374,"~/NERD_tree_1"
--'  45  0  ~/NERD_tree_1
-|4,39,45,0,1476829374,"~/NERD_tree_1"
--'  46  0  ~/NERD_tree_1
-|4,39,46,0,1476829374,"~/NERD_tree_1"
--'  45  0  ~/NERD_tree_1
-|4,39,45,0,1476829374,"~/NERD_tree_1"
--'  46  0  ~/NERD_tree_1
-|4,39,46,0,1476829374,"~/NERD_tree_1"
--'  45  0  ~/NERD_tree_1
-|4,39,45,0,1476829374,"~/NERD_tree_1"
--'  46  0  ~/NERD_tree_1
-|4,39,46,0,1476829374,"~/NERD_tree_1"
--'  45  0  ~/NERD_tree_1
-|4,39,45,0,1476829374,"~/NERD_tree_1"
--'  46  0  ~/NERD_tree_1
-|4,39,46,0,1476829374,"~/NERD_tree_1"
--'  45  0  ~/NERD_tree_1
-|4,39,45,0,1476829374,"~/NERD_tree_1"
--'  46  0  ~/NERD_tree_1
-|4,39,46,0,1476829374,"~/NERD_tree_1"
--'  45  0  ~/NERD_tree_1
-|4,39,45,0,1476829374,"~/NERD_tree_1"
--'  46  0  ~/NERD_tree_1
-|4,39,46,0,1476829374,"~/NERD_tree_1"
--'  45  0  ~/NERD_tree_1
-|4,39,45,0,1476829374,"~/NERD_tree_1"
--'  46  0  ~/NERD_tree_1
-|4,39,46,0,1476829374,"~/NERD_tree_1"
--'  45  0  ~/NERD_tree_1
-|4,39,45,0,1476829374,"~/NERD_tree_1"
--'  46  0  ~/NERD_tree_1
-|4,39,46,0,1476829374,"~/NERD_tree_1"
--'  45  0  ~/NERD_tree_1
-|4,39,45,0,1476829374,"~/NERD_tree_1"
--'  46  0  ~/NERD_tree_1
-|4,39,46,0,1476829374,"~/NERD_tree_1"
--'  96  2  ~/NERD_tree_1
-|4,39,96,2,1476829315,"~/NERD_tree_1"
--'  97  2  ~/NERD_tree_1
-|4,39,97,2,1476829315,"~/NERD_tree_1"
--'  1  0  ~/NERD_tree_1
-|4,39,1,0,1476829315,"~/NERD_tree_1"
--'  96  2  ~/NERD_tree_1
-|4,39,96,2,1476829315,"~/NERD_tree_1"
--'  97  2  ~/NERD_tree_1
-|4,39,97,2,1476829315,"~/NERD_tree_1"
--'  1  0  ~/NERD_tree_1
-|4,39,1,0,1476829315,"~/NERD_tree_1"
--'  96  2  ~/NERD_tree_1
-|4,39,96,2,1476829315,"~/NERD_tree_1"
--'  97  2  ~/NERD_tree_1
-|4,39,97,2,1476829315,"~/NERD_tree_1"
--'  1  0  ~/NERD_tree_1
-|4,39,1,0,1476829315,"~/NERD_tree_1"
--'  96  2  ~/NERD_tree_1
-|4,39,96,2,1476829315,"~/NERD_tree_1"
--'  97  2  ~/NERD_tree_1
-|4,39,97,2,1476829315,"~/NERD_tree_1"
--'  1  0  ~/NERD_tree_1
-|4,39,1,0,1476829315,"~/NERD_tree_1"
--'  96  2  ~/NERD_tree_1
-|4,39,96,2,1476829315,"~/NERD_tree_1"
--'  97  2  ~/NERD_tree_1
-|4,39,97,2,1476829315,"~/NERD_tree_1"
--'  1  0  ~/NERD_tree_1
-|4,39,1,0,1476829315,"~/NERD_tree_1"
--'  96  2  ~/NERD_tree_1
-|4,39,96,2,1476829315,"~/NERD_tree_1"
--'  97  2  ~/NERD_tree_1
-|4,39,97,2,1476829315,"~/NERD_tree_1"
--'  1  0  ~/NERD_tree_1
-|4,39,1,0,1476829315,"~/NERD_tree_1"
--'  96  2  ~/NERD_tree_1
-|4,39,96,2,1476829315,"~/NERD_tree_1"
--'  97  2  ~/NERD_tree_1
-|4,39,97,2,1476829315,"~/NERD_tree_1"
--'  1  0  ~/NERD_tree_1
-|4,39,1,0,1476829315,"~/NERD_tree_1"
--'  96  2  ~/NERD_tree_1
-|4,39,96,2,1476829315,"~/NERD_tree_1"
--'  97  2  ~/NERD_tree_1
-|4,39,97,2,1476829315,"~/NERD_tree_1"
--'  1  0  ~/NERD_tree_1
-|4,39,1,0,1476829315,"~/NERD_tree_1"
--'  96  2  ~/NERD_tree_1
-|4,39,96,2,1476829315,"~/NERD_tree_1"
--'  97  2  ~/NERD_tree_1
-|4,39,97,2,1476829315,"~/NERD_tree_1"
--'  1  0  ~/NERD_tree_1
-|4,39,1,0,1476829315,"~/NERD_tree_1"
--'  96  2  ~/NERD_tree_1
-|4,39,96,2,1476829315,"~/NERD_tree_1"
 
 # History of marks within files (newest to oldest):
 
 > ~/dotfiles/.gitignore
-	*	1476891796	0
-	"	43	16
-	^	43	17
-	.	43	16
-	+	43	16
+	*	1476891894	0
+	"	44	14
+	^	44	15
+	.	44	14
+	+	43	17
+	+	44	14
+
+> ~/dotfiles/.git/MERGE_MSG
+	*	1476891825	0
+	"	1	0
 
 > ~/WorkSpace/CertMon/scratchpad/tasks.py
 	*	1476891717	0
