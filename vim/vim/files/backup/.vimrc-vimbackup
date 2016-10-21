@@ -54,7 +54,8 @@ Plug 'klen/python-mode'
 call plug#end()
 
 " Color Scheme
-colorscheme base16-google-dark
+" colorscheme gruvbox
+colorscheme default 
 set background=dark
 " colorscheme flattened_dark
 " let base16colorspace=256
@@ -116,8 +117,8 @@ set viminfo ='100,n$HOME/.vim/files/info/viminfo
 
 " Python
 
-set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
-" set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ \ [%l/%L\ (%p%%)
+" set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
+set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ \ [%l/%L\ (%p%%)
 filetype plugin indent on
 au FileType py set autoindent
 au FileType py set smartindent
