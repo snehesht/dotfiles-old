@@ -6,21 +6,56 @@
 
 
 # hlsearch on (H) or off (h):
-~h
+~H
 # Last Search Pattern:
-~MSle0/^" \a
+~MSle0~/swap
 
 # Last Substitute Search Pattern:
-~MSle0~&^" \a
+~MSle0&gruvbox_bold
 
 # Last Substitute String:
-$
+$, 
 
 # Command Line History (newest to oldest):
 :q
 :wq
-:set paste
+:q!
+:.,.+1q
+:Thesaurus hello
+:/swap
 :w
+:edit ~/WorkSpace/certmon/README.md
+:vsplit .vimrc
+:vsplit ~/.vim/r
+:echo expand("*")
+:set paste
+:ls
+:find .vimrc
+:edit ~/.vimrc
+:find ./.viminfo
+:find gruvbox-dark.css
+:PlugClean
+:w!
+:PlugInstall
+:vsplit ~/.vimrc
+:vsplit ~/.vim/colors/Tomorrow-Night-Eighties.vim
+:split ~/.vim/colors/Tomorrow-Night-Blue.vim
+:set path+=**
+:set foldclose=all
+:let g:bold=''
+:let s:bold=0
+:/bold
+:/BOLD
+:grep -rl "=bold" $VIM
+:g:gruvbox_bold
+:let g:gruvbox_bold
+:get g:gruvbox_bold
+:let g:gruvbox_bold=0
+:set t_md=
+:ex
+:edit ~/.vim/colors/gruvbox.vim
+:split 
+:set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 :colo base16-google-dark
 :colo base16-3024
 :colo default
@@ -29,46 +64,16 @@ $
 :set go=i
 :.w
 :YcmRestartServer
-:vsplit ~/.vimrc
-:q!
 :split ~/.vimrc
-:PlugInstall
-:PlugClean
 :o ~/tmp/test.py
 :colo gruvbox
-:vsplit
-:NERDTree
-:split
-:PymodeLintAuto
-:let python_highlight_all=1
-:let python_highlight_all=0
-:set showmatch
-:w /tmp/tasks.py
-:o ~/WorkSpace/CertMon/scratchpad/tasks.py
-:/hello
-:/h
-:/
-:tab
-:/t
-:/flat
-:gvim
-:GetScripts
-:Gt
-:Gdiff
-:Gstatus
-:help cs
-:help css
-:help yss
-:yss --help
-:Goyo
-:Thesaurus Supply
-:Thesaurus Python
-:Thesaurus Hello
-:OnlineThesaurusCurrentWord
-:Thesaurus
-:Thesaurus hello
 
 # Search String History (newest to oldest):
+? ^Synonyms:
+? swap
+? bold
+? BOLD
+? gruvbox_bold
 ? \s\+$
 ? ^" \a
 ??hello
@@ -76,7 +81,6 @@ $
 ? h
 ? t
 ? flat
-? ^Synonyms:
 
 # Expression History (newest to oldest):
 
@@ -89,11 +93,123 @@ $
 # Registers:
 "0	CHAR	0
 	syntax on
-"1	LINE	0
+""1	LINE	0
 	
 "2	LINE	0
+	" Statusline
+	
+	let g:currentmode={
+	    \ 'n'  : 'N ',
+	    \ 'no' : 'N·Operator Pending ',
+	    \ 'v'  : 'V ',
+	    \ 'V'  : 'V·Line ',
+	    \ '^V'; : 'V·Block ',
+	    \ 's'  : 'Select ',
+	    \ 'S'  : 'S·Line ',
+	    \ '^S' : 'S·Block ',
+	    \ 'i'  : 'I ',
+	    \ 'R'  : 'R ',
+	    \ 'Rv' : 'V·Replace ',
+	    \ 'c'  : 'Command ',
+	    \ 'cv' : 'Vim Ex ',
+	    \ 'ce' : 'Ex ',
+	    \ 'r'  : 'Prompt ',
+	    \ 'rm' : 'More ',
+	    \ 'r?' : 'Confirm ',
+	    \ '!'  : 'Shell ',
+	  \ 't'  : 'Terminal '
+	    \}
+	
+	" Automatically change the statusline color depending on mode
+	function! ChangeStatuslineColor()
+	  if (mode() =~# '\v(n|no)')
+	    exe 'hi! StatusLine ctermfg=008'
+	  elseif (mode() =~# '\v(v|V)' || g:currentmode[mode()] ==# 'V·Block' || get(g:currentmode, mode(), '') ==# 't')
+	    exe 'hi! StatusLine ctermfg=005'
+	  elseif (mode() ==# 'i')
+	    exe 'hi! StatusLine ctermfg=004'
+	  else
+	    exe 'hi! StatusLine ctermfg=006'
+	  endif
+	
+	  return ''
+	endfunction
+	
+	" Find out current buffer's size and output it.
+	function! FileSize()
+	    let bytes = getfsize(expand('%:p'))
+	    if (bytes >= 1024)
+	        let kbytes = bytes / 1024
+	    endif
+	    if (exists('kbytes') && kbytes >= 1000)
+	        let mbytes = kbytes / 1000
+	    endif
+	
+	    if bytes <= 0
+	        return '0'
+	    endif
+	
+	    if (exists('mbytes'))
+	        return mbytes . 'MB '
+	    elseif (exists('kbytes'))
+	        return kbytes . 'KB '
+	    else
+	        return bytes . 'B '
+	    endif
+	endfunction
+	
+	function! ReadOnly()
+	  if &readonly || !&modifiable
+	    return ''
+	  else
+	    return ''
+	endfunction
+	
+	function! GitInfo()
+	  let git = fugitive#head()
+	  if git != ''
+	    return ' '.fugitive#head()
+	  else
+	    return ''
+	endfunction
+	
+	set laststatus=2
+	set statusline=
+	set statusline+=%{ChangeStatuslineColor()}               " Changing the statusline color
+	set statusline+=%0*\ %{toupper(g:currentmode[mode()])}   " Current mode
+	set statusline+=%8*\ [%n]                                " buffernr
+	set statusline+=%8*\ %{GitInfo()}                        " Git Branch name
+	set statusline+=%8*\ %<%F\ %{ReadOnly()}\ %m\ %w\        " File+path
+	set statusline+=%#warningmsg#
+	set statusline+=%{SyntasticStatuslineFlag()}             " Syntastic errors
+	set statusline+=%*
+	set statusline+=%9*\ %=                                  " Space
+	set statusline+=%8*\ %y\                                 " FileType
+	set statusline+=%7*\ %{(&fenc!=''?&fenc:&enc)}\[%{&ff}]\ " Encoding & Fileformat
+	set statusline+=%8*\ %-3(%{FileSize()}%)                 " File size
+	set statusline+=%0*\ %3p%%\ \ %l:\ %3c\                 " Rownumber/total (%)
+	
+	hi User1 ctermfg=007
+	hi User2 ctermfg=008
+	hi User3 ctermfg=008
+	hi User4 ctermfg=008
+	hi User5 ctermfg=008
+	hi User7 ctermfg=008
+	hi User8 ctermfg=008
+	hi User9 ctermfg=007
 	
 "3	LINE	0
+	
+"4	LINE	0
+	StatusLine
+	set statusline=%!StatusLine()
+"5	LINE	0
+	set statusline=%!StatusLine()
+"6	LINE	0
+	
+"7	LINE	0
+	
+"8	LINE	0
 	Docstring for ssl:module ssl
 	========================================
 	This module provides some more Pythonic support for SSL.
@@ -180,44 +296,114 @@ $
 	ALERT_DESCRIPTION_BAD_CERTIFICATE_STATUS_RESPONSE
 	ALERT_DESCRIPTION_BAD_CERTIFICATE_HASH_VALUE
 	ALERT_DESCRIPTION_UNKNOWN_PSK_IDENTITY
-"4	LINE	0
-	
-"5	LINE	0
-	Docstring for ssl:class SSLContext
-	========================================
-	SSLContext(self, protocol)
-	
-	An SSLContext holds various SSL-related configuration options and
-	data, such as certificates and possibly a private key.
-"6	LINE	0
-	
-"7	LINE	0
-	Docstring for tasks:def get_cert_info
-	========================================
-	get_cert_info(url)
-	
-"8	LINE	0
-	
 "9	LINE	0
-	Hello World
+	
 "q	CHAR	0
 	w
-""-	CHAR	0
-	echo $WIFI_IPADDRESS
+"-	CHAR	0
+	a
 
 # File marks:
-'0  1  0  /tmp/zshTGdPh0
-'1  10  0  ~/dotfiles/zsh/functions/stopwatch.zsh
-'2  5  51  ~/.config/i3/blocks/local-address
-'3  15  0  ~/.config/i3/blocks/local-address
-'4  4  86  ~/.config/i3/blocks/local-address
-'5  4  109  ~/.config/i3/blocks/local-address
-'6  4  1  ~/.config/i3/blocks/local-address
-'7  4  19  ~/.config/i3/blocks/local-address
-'8  4  8  ~/.config/i3/blocks/local-address
-'9  4  8  ~/.config/i3/blocks/local-address
+'0  2  0  ~/Dropbox/Jobs/DatadogHQ/About Myself.txt
+'1  1  0  ~/Dropbox/cover letter.txt
+'2  1  6  ~/jobs/Vimeo.md
+'3  2  22  ~/jobs/Trello.md
+'4  18  13  ~/jobs/thinknum.md
+'5  1  44  ~/jobs/audible.md
+'6  23  188  ~/underdog.md
+'7  26  0  ~/jobs.md
+'8  2  0  ~/.vimrc
+'9  120  38  ~/.vimrc
 
 # Jumplist (newest first):
+-'  2  0  ~/Dropbox/Jobs/DatadogHQ/About Myself.txt
+-'  1  0  ~/Dropbox/Jobs/DatadogHQ/About Myself.txt
+-'  1  0  ~/Dropbox/cover letter.txt
+-'  1  6  ~/jobs/Vimeo.md
+-'  2  22  ~/jobs/Trello.md
+-'  1  0  ~/jobs/Trello.md
+-'  18  13  ~/jobs/thinknum.md
+-'  1  0  ~/jobs/thinknum.md
+-'  1  44  ~/jobs/audible.md
+-'  23  188  ~/underdog.md
+-'  1  0  ~/underdog.md
+-'  26  0  ~/jobs.md
+-'  1  0  ~/jobs.md
+-'  2  0  ~/.vimrc
+-'  1  0  ~/.vimrc
+-'  120  38  ~/.vimrc
+-'  159  0  ~/.vimrc
+-'  85  0  ~/.vimrc
+-'  58  0  ~/.vimrc
+-'  161  0  ~/.vimrc
+-'  460  0  ~/.vimrc
+-'  15  11  ~/.vimrc
+-'  29  0  ~/.vimrc
+-'  1  0  ~/.viminfo
+-'  42  0  ~/dotfiles/vim/vim/colors/Tomorrow-Night-Eighties.vim
+-'  150  13  ~/.vimrc
+-'  126  42  ~/.vimrc
+-'  330  4  ~/mpv.py
+-'  1  0  ~/mpv.py
+-'  421  51  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  419  47  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  417  51  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  415  47  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  413  51  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  411  49  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  409  45  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  139  8  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  138  13  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  137  14  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  29  16  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  28  22  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  1156  33  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  1155  33  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  1154  32  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  1153  32  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  902  53  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  876  50  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  856  33  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  843  59  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  842  50  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  841  53  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  840  44  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  834  39  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  829  32  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  776  40  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  775  41  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  774  41  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  642  47  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  615  41  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  569  30  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  549  38  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  548  40  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  510  30  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  508  31  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  506  30  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  504  30  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  502  40  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  499  27  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  496  31  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  493  39  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  487  42  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  486  42  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  461  43  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  456  45  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  1  0  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  69  0  ~/.vimrc
+-'  10  0  ~/.vimrc
+-'  115  0  ~/.vimrc
+-'  261  0  ~/mpv.py
+-'  40  4  ~/mpv.py
+-'  158  0  ~/.vimrc
+-'  64  0  ~/.vimrc
+-'  57  2  ~/dotfiles/vim/vimrc
+-'  1  0  ~/dotfiles/vim/vimrc
+-'  1  0  ~/dotfiles/vim/NERD_tree_1
+-'  8  0  ~/dotfiles/vim/NERD_tree_1
+-'  14  0  /tmp/craigsuck/updater.py
+-'  1  0  /tmp/craigsuck/updater.py
 -'  1  0  /tmp/zshTGdPh0
 -'  10  0  ~/dotfiles/zsh/functions/stopwatch.zsh
 -'  1  0  ~/dotfiles/zsh/functions/stopwatch.zsh
@@ -227,96 +413,9 @@ $
 -'  4  86  ~/.config/i3/blocks/local-address
 -'  1  0  ~/.config/i3/blocks/lo
 -'  2  0  ~/.config/i3/blocks/ip-address
--'  1  0  ~/.config/i3/blocks/ip-address
--'  1  7  ~/play.py
--'  9  1  ~/play.py
--'  20  55  ~/play.py
--'  760  54  ~/mpv.py
--'  150  4  ~/mpv.py
--'  1  0  ~/mpv.py
--'  18  0  ~/mpv.py
--'  13  0  ~/.config/cava/config
--'  1  0  ~/.config/cava/config
--'  15  7  ~/.config/redshift.conf
--'  1  0  ~/.config/redshift.conf
--'  176  18  ~/.config/i3/config
--'  1  0  ~/.config/i3/config
--'  1  0  ~/WorkSpace/upip/upip_old/pipHandler.py
--'  29  63  ~/WorkSpace/upip/upip_old/pipHandler.py
--'  33  21  ~/WorkSpace/upip/upip_old/pipHandler.py
--'  62  17  ~/WorkSpace/upip/upip_old/pipHandler.py
--'  1  0  ~/WorkSpace/upip/upip.py--depriciated_file
--'  104  0  ~/WorkSpace/fast-wavenet/wavenet/layers.py
--'  1  0  ~/pipHandler.py
--'  3  0  ~/WorkSpace/upip/upip_old/pipHandler.py
--'  1  0  ~/WorkSpace/upip/upip/pipHandler.py
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  58  18  ~/.vimrc
--'  1  0  ~/.vimrc
--'  56  0  ~/.vimrc
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pipHandler.py
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  121  1  ~/.vimrc
--'  1  0  ~/WorkSpace/upip/upip/pipHandler.py
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pipHandler.py
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pipHandler.py
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pipHandler.py
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pipHandler.py
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pipHandler.py
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pipHandler.py
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pipHandler.py
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pipHandler.py
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pipHandler.py
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip.py--depriciated_file
--'  104  0  ~/WorkSpace/fast-wavenet/wavenet/layers.py
--'  1  0  ~/pipHandler.py
--'  1  0  ~/WorkSpace/upip/upip/pipHandler.py
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  58  18  ~/.vimrc
--'  1  0  ~/.vimrc
--'  56  0  ~/.vimrc
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pipHandler.py
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  121  1  ~/.vimrc
--'  1  0  ~/WorkSpace/upip/upip/pipHandler.py
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pipHandler.py
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pipHandler.py
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pipHandler.py
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pipHandler.py
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  1  0  ~/WorkSpace/upip/upip/pip
--'  9  0  ~/.config/i3/blocks/local-address
+-'  421  51  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  419  47  ~/dotfiles/vim/vim/colors/gruvbox.vim
+-'  417  51  ~/dotfiles/vim/vim/colors/gruvbox.vim
 
 # Bar lines, copied verbatim:
 |1,4
@@ -503,6 +602,203 @@ $
 
 # History of marks within files (newest to oldest):
 
+> ~/Dropbox/Jobs/DatadogHQ/About Myself.txt
+	"	2	0
+
+> ~/Dropbox/cover letter.txt
+	"	1	0
+
+> ~/jobs/Vimeo.md
+	"	1	6
+	^	1	7
+	.	1	6
+	+	1	6
+
+> ~/jobs/Trello.md
+	"	2	22
+	^	2	23
+	.	2	0
+	+	2	0
+
+> ~/jobs/thinknum.md
+	"	18	13
+	^	18	14
+	.	18	0
+	+	18	0
+
+> ~/jobs/audible.md
+	"	1	44
+	^	1	45
+	.	1	0
+	+	11	0
+	+	1	0
+
+> ~/underdog.md
+	"	23	188
+	^	23	189
+	.	23	100
+	+	23	100
+
+> ~/jobs.md
+	"	26	0
+	^	26	0
+	.	25	0
+	+	25	0
+
+> ~/.vimrc
+	"	2	0
+	^	120	39
+	.	120	39
+	+	67	1
+	+	64	0
+	+	67	0
+	+	64	1
+	+	82	1
+	+	1	22
+	+	64	0
+	+	67	1
+	+	64	24
+	+	113	0
+	+	114	0
+	+	98	0
+	+	104	0
+	+	101	0
+	+	95	0
+	+	91	0
+	+	87	0
+	+	83	0
+	+	80	0
+	+	73	0
+	+	6	13
+	+	9	16
+	+	10	2
+	+	11	0
+	+	10	0
+	+	11	11
+	+	157	16
+	+	153	9
+	+	158	0
+	+	157	0
+	+	156	0
+	+	155	0
+	+	154	50
+	+	154	0
+	+	153	0
+	+	154	51
+	+	57	4
+	+	59	0
+	+	34	11
+	+	35	3
+	+	45	0
+	+	64	18
+	+	65	18
+	+	154	50
+	+	154	0
+	+	64	1
+	+	65	1
+	+	65	18
+	+	6	12
+	+	158	13
+	+	65	1
+	+	64	0
+	+	69	0
+	+	17	51
+	+	18	11
+	+	107	55
+	+	112	1
+	+	111	1
+	+	110	1
+	+	109	1
+	+	108	1
+	+	154	50
+	+	155	0
+	+	149	0
+	+	129	24
+	+	148	0
+	+	129	10
+	+	126	12
+	+	107	1
+	+	108	0
+	+	109	0
+	+	110	0
+	+	111	0
+	+	112	0
+	+	110	0
+	+	150	13
+	+	126	29
+	+	1	0
+	+	29	1
+	+	126	12
+	+	128	0
+	+	126	0
+	+	127	0
+	+	126	0
+	+	127	0
+	+	129	0
+	+	149	0
+	+	15	11
+	+	162	0
+	+	460	0
+	+	159	0
+	+	159	0
+	+	161	20
+	+	127	1
+	+	161	0
+	+	160	0
+	+	161	0
+	+	160	0
+	+	158	0
+	+	120	39
+
+> ~/thesaurus: hello
+	"	1	0
+	.	1	0
+	+	5	0
+	+	1	0
+
+> ~/WorkSpace/certmon/README.md
+	"	4	0
+
+> ~/dotfiles/vim/vim/r
+	"	1	0
+
+> ~/WorkSpace/certmon/src/tags
+	"	11	0
+
+> ~/WorkSpace/certmon/src/server/certmon/model.py
+	"	43	0
+
+> ~/Dropbox/WorkSpace/pomodoro/node_modules/highlight.js/styles/gruvbox-dark.css
+	"	1	0
+
+> ~/.viminfo
+	"	1	0
+
+> ~/dotfiles/vim/vim/colors/Tomorrow-Night-Blue.vim
+	"	1	0
+
+> ~/dotfiles/vim/vim/colors/Tomorrow-Night-Eighties.vim
+	"	42	0
+	.	41	0
+	+	41	0
+
+> ~/mpv.py
+	"	330	4
+
+> ~/dotfiles/vim/vim/colors/gruvbox.vim
+	"	421	51
+
+> ~/dotfiles/vim/vimrc
+	"	57	2
+
+> ~/dotfiles/vim/NERD_tree_1
+	"	1	0
+	.	1	0
+	+	1	0
+
+> /tmp/craigsuck/updater.py
+	"	14	0
+
 > /tmp/zshTGdPh0
 	"	1	0
 
@@ -582,9 +878,6 @@ $
 	+	20	13
 	+	9	1
 
-> ~/mpv.py
-	"	760	54
-
 > ~/.config/cava/config
 	"	13	0
 	^	13	1
@@ -617,101 +910,6 @@ $
 
 > ~/WorkSpace/upip/upip_old/pipHandler.py
 	"	1	0
-
-> ~/.vimrc
-	"	125	12
-	^	125	13
-	.	125	13
-	+	86	0
-	+	85	24
-	+	1	1
-	+	1	0
-	+	5	0
-	+	1	2
-	+	2	0
-	+	17	1
-	+	18	1
-	+	18	42
-	+	19	11
-	+	18	41
-	+	21	0
-	+	18	42
-	+	62	1
-	+	20	1
-	+	18	41
-	+	19	0
-	+	34	11
-	+	35	92
-	+	4	0
-	+	36	10
-	+	40	0
-	+	43	24
-	+	45	2
-	+	46	24
-	+	45	2
-	+	46	25
-	+	47	0
-	+	46	20
-	+	1	0
-	+	2	0
-	+	1	0
-	+	2	0
-	+	1	0
-	+	2	0
-	+	1	0
-	+	61	0
-	+	58	0
-	+	61	1
-	+	60	1
-	+	57	0
-	+	60	0
-	+	57	1
-	+	74	1
-	+	1	22
-	+	57	0
-	+	60	1
-	+	57	24
-	+	104	0
-	+	105	0
-	+	90	0
-	+	96	0
-	+	93	0
-	+	87	0
-	+	83	0
-	+	79	0
-	+	75	0
-	+	72	0
-	+	65	0
-	+	6	13
-	+	9	16
-	+	10	2
-	+	11	0
-	+	10	0
-	+	11	11
-	+	124	16
-	+	119	9
-	+	125	0
-	+	124	0
-	+	123	0
-	+	122	0
-	+	121	0
-	+	120	0
-	+	119	0
-	+	121	1
-	+	50	4
-	+	52	0
-	+	27	11
-	+	28	3
-	+	38	0
-	+	57	18
-	+	58	18
-	+	121	0
-	+	120	0
-	+	57	1
-	+	58	1
-	+	58	18
-	+	6	12
-	+	125	13
 
 > /usr/share/vim/vim74/syntax/colortest.vim
 	"	8	24
@@ -906,12 +1104,6 @@ $
 > ~/thesaurus: python
 	*	1476808586	0
 	"	1	0
-	.	1	0
-	+	1	0
-
-> ~/thesaurus: hello
-	*	1476808581	0
-	"	3	0
 	.	1	0
 	+	1	0
 
