@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/warlock/CodeBase'
+let g:netrw_dirhist_2='/home/warlock/CodeBase/Python'
+let g:netrw_dirhist_3='/home/warlock/CodeBase/Python/default'
+let g:netrw_dirhist_4='/home/warlock/Perpetual/PhilU'
+let g:netrw_dirhist_5='/home/warlock/Perpetual/PhilU/videos'
+let g:netrw_dirhist_6='/home/warlock/Perpetual/PhilU'
+let g:netrw_dirhist_7='/home/warlock/Perpetual/PhilU/edx-app-android-release-2.6.3'
+let g:netrw_dirhist_8='/home/warlock/Perpetual/PhilU/edx-app-android-release-2.6.3/build'
+let g:netrw_dirhist_9='/home/warlock/Perpetual/PhilU/edx-app-android-release-2.6.3/build/generated'

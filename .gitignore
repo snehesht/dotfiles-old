@@ -42,3 +42,5 @@ sublime-text/*
 # Vim plugged folder
 vim/vim/plugged/*
 vim/vim/files/*
+vim/vim/files/info/viminfo
+.gitignore
