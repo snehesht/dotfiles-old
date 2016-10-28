@@ -1,16 +1,44 @@
+! Cursor theme
+Xcursor.theme: DMZ-White
+
+! Fonts
 URxvt.font:                xft:Hack:pixelsize=13
 URxvt.boldFont:            xft:Hack:pixelsize=13:bold
 URxvt.italicFont:          xft:Hack:pixelsize=13:italic
 URxvt.boldItalicFont:      xft:Hack:pixelsize=13:bold:italic
 URxvt.letterSpace:         -1
 
+URxvt.modifier:            alt
 
+! Borders
 URxvt.internalBorder:      5
 URxvt.externalBorder:      0
 
-URxvt.scrollBar: false
+! Disable scrollbar
+URxvt.scrollBar:           false
+URxvt*fading:              30
 
-#include ".Xresources-colorscheme-gruvbox"
+! Load perl plugins
+URxvt.perl-ext-common:     matcher,resize-font,clipboard
 
+! Remap keys
+URxvt.keysym.F11:          perl:fullscreen:switch
 
+! URxvt.resize-font.smaller: C-Down
+! URxvt.resize-font.bigger:  C-Up
 
+URxvt.url-launcher:        /usr/bin/chromium
+URxvt.keysym.M-Delete:     perl:matcher:list
+URxvt.colorUL:             #7780a1
+
+URxvt*iso14755: False
+URxvt*iso1475_52: False
+
+! Copy & Paste
+URxvt.keysym.C-C:   perl:clipboard:copy
+URxvt.keysym.C-V:   perl:clipboard:paste
+
+! URxvt.clipboard.copycmd:  xsel -ib
+! URxvt.clipboard.pastecmd: xsel -ob
+
+#include ".Xresources-colorscheme"

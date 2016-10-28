@@ -1,7 +1,7 @@
 ! Base16 Google
 ! Scheme: Seth Wright (http://sethawright.com)
 
-URxvt*background:                     #1d1f21
+URxvt*background:                     #262626
 URxvt*foreground:                     #c5c8c6
 URxvt*cursorColor:                    #c5c8c6
 
