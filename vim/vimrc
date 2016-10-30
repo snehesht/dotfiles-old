@@ -56,6 +56,8 @@ Plug 'tpope/vim-surround'
 " Python syntax highlighting, pep8 
 Plug 'klen/python-mode'
 
+" Tmux plugin for vim
+Plug 'tmux-plugins/vim-tmux'
 
 " End Vim-Plug
 call plug#end()

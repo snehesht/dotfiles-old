@@ -19,7 +19,7 @@ exec --no-startup-id nm-applet
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Fira Code Retina, Hack, monospace,FontAwesome 9
+font pango:Hack, monospace,FontAwesome 9
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -162,18 +162,18 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        position top
-	height 22	
- 	i3bar_command i3bar -t
+    position top
+	height 24	
+    i3bar_command i3bar -t
 	#status_command i3status -c ~/.config/i3/i3status.conf
 	status_command i3blocks  -c ~/.config/i3/i3blocks.conf
         #status_command py3status -c ~/.config/i3/i3status.conf
 	tray_output primary
-	font pango: Hack, Fira Code Retina ,monospace, FontAwesome 10
+	font pango: monospace, FontAwesome 9
 	colors {
 		background #33333300
 		statusline #ffffff
-		separator #AAAAAA88
+		separator #FFFFFF88
 		focused_workspace  #00ff006F #04ca044F #FFFFFF
 		active_workspace   #AAAAAA00 #991111 #FFFFFF
 		inactive_workspace #25252500 #33333300 #FFFFFF
