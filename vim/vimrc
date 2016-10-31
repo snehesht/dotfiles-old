@@ -29,22 +29,33 @@ call plug#begin('~/.vim/plugged')
 " Plug 'Valloric/YouCompleteMe'
 
 " Base16 Color Scheme
-Plug 'chriskempson/base16-vim'
+" Plug 'chriskempson/base16-vim'
 
 " Nerdtree 
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 
-" CodiVim
+" Vim-venigar
+Plug 'tpope/vim-vinegar'
+
+"CodiVim
 Plug 'metakirby5/codi.vim'
 
 " Thesarus 
 Plug 'beloglazov/vim-online-thesaurus', { 'on': ['Thesaurus', 'OnlineThesaurusCurrentWord'] }
 
 " Comments
+" gcc in normal/visual mode to toggle comments
 Plug 'tpope/vim-commentary'
+
+" Plug 'scrooloose/nerdcommenter'
 
 " Git Wrapper
 Plug 'tpope/vim-fugitive'
+
+" Git-gutter
+" Disabled by default, to enable :GitGutterToggle
+Plug 'airblade/vim-gitgutter'
+let g:gitgutter_enabled = 0
 
 " Distraction free writing 
 Plug 'junegunn/goyo.vim'
@@ -52,22 +63,31 @@ Plug 'junegunn/goyo.vim'
 " Quoting Parenthesizing plugin
 Plug 'tpope/vim-surround'
 
-
 " Python syntax highlighting, pep8 
 Plug 'klen/python-mode'
 
 " Tmux plugin for vim
 Plug 'tmux-plugins/vim-tmux'
 
+" Seamless navigation between tmux and vim
+Plug 'christoomey/vim-tmux-navigator'
+
+" Vim Airline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+let g:airline_theme='base16'
+
+
+
+" CSS
+Plug 'ap/vim-css-color'
+
 " End Vim-Plug
 call plug#end()
 
 " Color Scheme
 colorscheme gruvbox
-" colorscheme default 
 set background=dark
-" colorscheme flattened_dark
-" let base16colorspace=256
 let g:gruvbox_bold=0
 
 set antialias
@@ -126,7 +146,7 @@ set undodir     =$HOME/.vim/files/undo/
 set viminfo ='100,n$HOME/.vim/files/info/viminfo
 
 " StatusLine
-" set statusline=%!StatusLine()
+set statusline=%!StatusLine()
 
 function! StatusLine()
     let statusline = ""

@@ -62,7 +62,7 @@ plugins=(git pyenv python)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+#export PATH="/usr/local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 #export PATH='/home/warlock/.gem/ruby/2.3.0/bin':$PATH
@@ -113,3 +113,6 @@ if [ -f ~/dotfiles/zsh/zshalias ]; then
 else
         print "404: ~/dotfiles/zsh/zshalias not found."
 fi
+
+# Fish shell like color highlighting
+source ~/dotfiles/zsh/syntax.zsh
