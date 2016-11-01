@@ -115,5 +115,8 @@ else
         print "404: ~/dotfiles/zsh/zshalias not found."
 fi
 
+# Antigen Plugin Manager
+source ~/dotfiles/zsh/antigen.zsh
+
 # Fish shell like color highlighting
 source ~/dotfiles/zsh/syntax.zsh
