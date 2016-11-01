@@ -1,5 +1,5 @@
-# Antigen Plugin Manager
-source ~/dotfiles/zsh/antigen.zsh
+# ZPlug Plugin Manager
+source ~/dotfiles/zsh/zplug/init.zsh
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/warlock/.oh-my-zsh
@@ -115,7 +115,19 @@ fi
 
 # Plugins
 #
-antigen bundle zsh-users/zsh-syntax-highlighting
+zplug "zsh-users/zsh-syntax-highlighting", nice:10
 
-# Apply plugins
-# antigen apply
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load --verbose
+
+
+
+
