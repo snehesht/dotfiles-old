@@ -113,3 +113,6 @@ if [ -f ~/dotfiles/zsh/zshalias ]; then
 else
         print "404: ~/dotfiles/zsh/zshalias not found."
 fi
+
+# Fish shell like color highlighting
+source ~/dotfiles/zsh/syntax.zsh
