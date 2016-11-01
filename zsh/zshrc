@@ -92,19 +92,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Alias
-
-# Git
-#alias gaa="git add ."
-#alias ga="git add $1"
-#alias gc="git commit -m $1"
-#
-#alias gp="git push"
-#
-#alias gs="git status"
-#
-#alias glg="git log --graph --decorate --oneline --all"
-
+############# Custom Alias #####################################################
 
 if [ -f ~/dotfiles/zsh/zshalias ]; then
 	source ~/dotfiles/zsh/zshalias
@@ -112,8 +100,19 @@ else
         print "404: ~/dotfiles/zsh/zshalias not found."
 fi
 
+############## Custom Functions ###############################################
+############## Include all files in functions directory #######################
 
-# Plugins
+for file in ~/dotfiles/zsh/functions/*; do
+	source $file
+done
+
+############## Include Custom Paths (zsh_custom_path) #######################
+
+source ~/dotfiles/zsh/zsh_custom_path
+
+
+############## Plugins - ZPlug #################################################
 #
 zplug "zsh-users/zsh-syntax-highlighting", nice:10
 

@@ -37,16 +37,3 @@ alias open="electron ~/min/ $@"
 
 # Calc
 alias calc="bc $@"
-
-
-############## Custom Functions ###############################################
-############## Include all files in functions directory #######################
-
-for file in ~/dotfiles/zsh/functions/*; do
-	source $file
-done
-
-############## Include Custom Paths (zsh_custom_path) #######################
-
-source ~/dotfiles/zsh/zsh_custom_path
-
