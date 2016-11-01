@@ -2,10 +2,10 @@
 Xcursor.theme: DMZ-White
 
 ! Fonts
-URxvt.font:                xft:Hack:pixelsize=13
-URxvt.boldFont:            xft:Hack:pixelsize=13:bold
-URxvt.italicFont:          xft:Hack:pixelsize=13:italic
-URxvt.boldItalicFont:      xft:Hack:pixelsize=13:bold:italic
+URxvt.font:                xft:Hack:pixelsize=16
+URxvt.boldFont:            xft:Hack:pixelsize=16:bold
+URxvt.italicFont:          xft:Hack:pixelsize=16:italic
+URxvt.boldItalicFont:      xft:Hack:pixelsize=16:bold:italic
 URxvt.letterSpace:         -1
 
 URxvt.modifier:            alt
