@@ -1,14 +1,11 @@
+# Antigen Plugin Manager
+source ~/dotfiles/zsh/antigen.zsh
+
 # Path to your oh-my-zsh installation.
 export ZSH=/home/warlock/.oh-my-zsh
 
+# 256 Color support
 export TERM=xterm-256color
-
-# Ruby Path
-# Golang
-#export GOPATH=/home/warlock/CodeBase/Go/
-#export GOPATH=$GOROOT/bin
-#export PATH="$PATH:$GOPATH/bin"
-
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -115,8 +112,10 @@ else
         print "404: ~/dotfiles/zsh/zshalias not found."
 fi
 
-# Antigen Plugin Manager
-source ~/dotfiles/zsh/antigen.zsh
 
-# Fish shell like color highlighting
-source ~/dotfiles/zsh/syntax.zsh
+# Plugins
+#
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Apply plugins
+# antigen apply
