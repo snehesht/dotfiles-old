@@ -169,7 +169,7 @@ bar {
 	status_command i3blocks  -c ~/.config/i3/i3blocks.conf
         #status_command py3status -c ~/.config/i3/i3status.conf
 	tray_output primary
-	font pango: monospace, FontAwesome 9
+	font pango: hack, FontAwesome 10
 	colors {
 		background #33333300
 		statusline #ffffff
