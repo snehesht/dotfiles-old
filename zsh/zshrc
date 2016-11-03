@@ -120,8 +120,8 @@ zplug "zsh-users/zsh-syntax-highlighting", nice:10
 zplug 'chrissicool/zsh-256color'
 
 # ZSH Pure theme
-zplug 'mafredri/zsh-async'
-zplug 'sindresorhus/pure'
+# zplug 'mafredri/zsh-async'
+# zplug 'sindresorhus/pure'
 
 
 # Install plugins if there are plugins that have not been installed

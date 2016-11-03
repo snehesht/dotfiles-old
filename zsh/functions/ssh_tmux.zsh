@@ -1,5 +1,5 @@
-function ssh(){
-    tmux rename-window "SSH//$@"
+function sshr(){
+    tmux rename-window "[SSH] $@"
     command ssh "$@"
     exit
 }
