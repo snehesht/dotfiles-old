@@ -6,8 +6,8 @@ heatmap_colors = ['colour010','colour011','colour009']
 
 tick = u'\u2589'
 CPU_COUNT = os.cpu_count()
-TOP_REPEAT=3
-TOP_DELAY=0.1
+TOP_REPEAT=5
+TOP_DELAY=0.02
 
 def collect_cpu_stats():
     cmd = ['top','-bn','1']
@@ -45,7 +45,9 @@ def collect_cpu_stats_avg():
         if cpu_usage.get(line[0],None) != None:
             cpu_usage[line[0]] = cpu_usage[line[0]] + line[1]
         else:
-            cpu_usage[line[0]] = line[1]
+            # ignoring the initial stats
+            # cpu_usage[line[0]] = line[1]
+            cpu_usage[line[0]] = 0
     # Now average all the added values
     for key,val in cpu_usage.items():
         cpu_usage[key] = int(val/TOP_REPEAT)
