@@ -34,9 +34,9 @@ def memstats(args):
 
     # For Normal terminal
     if args.i3:
-        if(len(used)>6):
+        if(len(used)>7):
             print(colors.red(used)+colors.white(free))
-        elif(len(used)<6 and len(used)>3):
+        elif(len(used)<8 and len(used)>5):
             print(colors.yellow(used)+colors.white(free))
         else:
             print(colors.green(used)+colors.white(free))
@@ -45,10 +45,10 @@ def memstats(args):
     # For Tmux
     if args.tmux:
         # green
-        if(len(used)>6):
+        if(len(used)>7):
             print('#[bg=colour236,fg=colour009]'+used+'#[fg=default,bg=default]#[bg=colour236,fg=colour231]'+free)
         # yellow
-        elif(len(used)<7 and len(used)>3):
+        elif(len(used)<8 and len(used)>5):
             print('#[bg=colour236,fg=colour011]'+used+'#[fg=default,bg=default]#[bg=colour236,fg=colour231]'+free)
         # red
         else:
